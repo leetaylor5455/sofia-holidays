@@ -16,6 +16,10 @@ html {
   z-index: -1;
 }
 
+.eiffel-bg img {
+  max-height: 98vh;
+}
+
 .louvre-bg {
   position: fixed;
   bottom: -10px;
