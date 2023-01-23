@@ -27,6 +27,7 @@ function SubmitButton(props) {
         <form ref={form} onSubmit={sendEmail}>
             <input style={{display: 'none'}} type='text' name='date' value={props.date}/>
             <input style={{display: 'none'}} type='text' name='hotel' value={props.hotel}/>
+            <input style={{display: 'none'}} type='text' name='website' value={props.website}/>
             <input type='submit' value='Okay!'/>
         </form>
     </div>

@@ -26,8 +26,8 @@ function Hotel(props) {
         ],
         keyPoints: ['lounge/terrace bar',
         '25 min walk to Sacre-Coeur',
-        '5 min walk to underground'
-]
+        '5 min walk to underground'],
+        website: 'https://www.lerobinetdor.com/en/'
     },
     { 
         index: 2,
@@ -42,8 +42,8 @@ function Hotel(props) {
         ],
         keyPoints: ['gym with sauna',
         'evening appetiser buffet',
-        'great breakfast'
-]
+        'great breakfast'],
+        website: 'https://www.okkohotels.com/en/page/paris-gare-de-lest/.3097.html'
     },
     { 
         index: 3,
@@ -58,8 +58,8 @@ function Hotel(props) {
         ],
         keyPoints: ['interior courtyard',
         '200 yards from underground',
-        'great area'
-]
+        'great area'],
+        website: 'https://www.hotelhenriette.com/en/'
     }
   ];
 

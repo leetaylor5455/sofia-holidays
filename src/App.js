@@ -32,6 +32,12 @@ function App() {
         '/Activities/sainte.jpg',
         '/Activities/arc.jpg',
         '/Activities/catacombs.jpg',
+        './Components/Images/DateTitle.svg',
+        './Components/Images/HotelTitle.svg',
+        './Components/Images/ActivitiesTitle.svg',
+        './Components/Images/SummaryTitle.svg',
+        './Components/Images/PackYourBags.svg',
+        './Components/Images/Louvre.svg'
     ];
 
     cacheImages(imgs);

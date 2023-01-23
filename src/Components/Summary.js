@@ -82,7 +82,7 @@ function Summary(props) {
           ))}
         </div>
 
-        <SubmitButton date={formattedDate} hotel={props.hotel.name}/>
+        <SubmitButton date={formattedDate} hotel={props.hotel.name} website={props.hotel.website}/>
         {/* <Button text='Okay!' link='/receipt' visible={true}/> */}
     </motion.div>
   )
