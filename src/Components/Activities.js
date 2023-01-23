@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 import Nav from './Nav';
-import ActivitiesTitle from '../Images/ActivitiesTitle.svg';
+// import ActivitiesTitle from '../Images/ActivitiesTitle.svg';
 import ActivityCard from './ActivityCard';
 import Button from './Button';
 
@@ -36,7 +36,7 @@ function Activities(props) {
       exit={exit}
       transition={transition}
     >
-        <Nav title={ActivitiesTitle} back='/hotel'/>
+        <Nav title={'/Titles/ActivitiesTitle.svg'} back='/hotel'/>
 
         <div className='activities'>
 

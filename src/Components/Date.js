@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Nav from './Nav';
-import DateTitle from '../Images/DateTitle.svg';
 import Button from './Button';
 import CalendarNextChevron from '../Images/CalendarNextChevron.svg';
 import CalendarPrevChevron from '../Images/CalendarPrevChevron.svg';
@@ -23,7 +22,7 @@ function DatePage(props) {
       exit={exit}
       transition={transition}
     >
-        <Nav title={DateTitle} back='/'/>
+        <Nav title={'/Titles/DateTitle.svg'} back='/'/>
 
         <div className='calendar-border'>
             <div className='calendar'>

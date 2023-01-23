@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 import Louvre from '../Images/Louvre.svg';
-import PYB from '../Images/PackYourBags.svg';
+// import PYB from '../Images/PackYourBags.svg';
 
 function Receipt() {
   return (
@@ -22,7 +22,7 @@ function Receipt() {
         style={{
             marginTop: 140
         }}>
-            <img src={PYB} alt='Pack your bags!'/>
+            <img src={'/Titles/PackYourBags.svg'} alt='Pack your bags!'/>
         </div>
     </motion.div>
   )

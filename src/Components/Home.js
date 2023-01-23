@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../Images/Title.svg';
-import Eiffel from '../Images/Eiffel.svg';
+// import Title from '../Images/Title.svg';
+// import Eiffel from '../Images/Eiffel.svg';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
@@ -14,10 +14,10 @@ function Home() {
             transition={transition}
         >
             <div className="eiffel-bg">
-                <img src={Eiffel} alt='Eiffel Tower'/>
+                <img src={'/Titles/Eiffel.svg'} alt='Eiffel Tower'/>
             </div>
             <div className="intro-title">
-                <img src={Title} alt='Welcome to your Paris birthday'/>
+                <img src={'/Titles/Title.svg'} alt='Welcome to your Paris birthday'/>
             </div>
             <Button text='Get Started' link="/date" visible={true}/>
         </motion.div>

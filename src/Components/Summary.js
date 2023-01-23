@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 import Nav from './Nav';
-import SummaryTitle from '../Images/SummaryTitle.svg'
+// import SummaryTitle from '../Images/SummaryTitle.svg'
 
 import HotelCard from './HotelCard';
 import ActivityCard from './ActivityCard';
@@ -54,7 +54,7 @@ function Summary(props) {
       exit={exit}
       transition={transition}
     >
-        <Nav title={SummaryTitle} back='/activities'/>
+        <Nav title={'/Titles/SummaryTitle.svg'} back='/activities'/>
 
         <div className='summary'>
           <div className='summary-heading'>We'll be going on the</div>
