@@ -20,7 +20,7 @@ function Receipt() {
 
         <div
         style={{
-            marginTop: 156
+            marginTop: 140
         }}>
             <img src={PYB} alt='Pack your bags!'/>
         </div>

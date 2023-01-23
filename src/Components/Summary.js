@@ -7,7 +7,7 @@ import SummaryTitle from '../Images/SummaryTitle.svg'
 
 import HotelCard from './HotelCard';
 import ActivityCard from './ActivityCard';
-import Button from './Button';
+import SubmitButton from './SubmitButton';
 
 function Summary(props) {
 
@@ -82,7 +82,8 @@ function Summary(props) {
           ))}
         </div>
 
-        <Button text='Okay!' link='/receipt' visible={true}/>
+        <SubmitButton date={formattedDate} hotel={props.hotel.name}/>
+        {/* <Button text='Okay!' link='/receipt' visible={true}/> */}
     </motion.div>
   )
 }
