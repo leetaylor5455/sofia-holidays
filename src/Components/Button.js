@@ -6,13 +6,13 @@ function Button(props) {
   const visible = {
     opacity: 1,
     pointerEvents: 'all',
-    transform: 'translateY(0px) translateX(-50%)'
+    transform: 'translateY(0vh) translateX(-50%)'
   }
 
   const hidden = {
     opacity: 0,
     pointerEvents: 'none',
-    transform: 'translateY(80px) translateX(-50%)'
+    transform: 'translateY(15vh) translateX(-50%)'
   }
 
   return (

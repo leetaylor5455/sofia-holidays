@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Nav from './Nav';
 import Button from './Button';
-import CalendarNextChevron from '../Images/CalendarNextChevron.svg';
-import CalendarPrevChevron from '../Images/CalendarPrevChevron.svg';
 import { motion } from 'framer-motion';
 import { initial, animate, exit, transition  } from './motionSettings';
 
@@ -32,8 +30,8 @@ function DatePage(props) {
                     next2Label={null}
                     prev2Label={null}
                     formatShortWeekday={(locale, date) => ("0" + date).slice(1,3)}
-                    nextLabel={<img src={CalendarNextChevron} alt='Next button'/>}
-                    prevLabel={<img src={CalendarPrevChevron} alt='Prev button'/>}
+                    nextLabel={<img src={'/Titles/CalendarNextChevron.svg'} alt='Next button'/>}
+                    prevLabel={<img src={'/Titles/CalendarPrevChevron.svg'} alt='Prev button'/>}
                     />
             </div>
         </div>

@@ -36,7 +36,9 @@ function App() {
         '/Titles/ActivitiesTitle.svg',
         '/Titles/SummaryTitle.svg',
         '/Titles/PackYourBags.svg',
-        '/Titles/Louvre.svg'
+        '/Titles/Louvre.svg',
+        '/Titles/CalendarNextChevron.svg',
+        '/Titles/CalendarPrevChevron.svg',
     ];
 
     cacheImages(imgs);
