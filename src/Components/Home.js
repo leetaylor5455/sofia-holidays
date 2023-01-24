@@ -1,16 +1,11 @@
 import React from 'react';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { initial, animate, exit, transition } from './motionSettings';
+import { initial, animate } from './motionSettings';
 
 function Home() {
     return (
-        <motion.div className="container"
-            initial={initial}
-            animate={animate}
-            exit={exit}
-            transition={transition}
-        >
+        <div className="container">
             <AnimatePresence>
                 <motion.div className="eiffel-bg"
                     initial={initial}
@@ -35,7 +30,7 @@ function Home() {
                     <Button text='Get Started' link="/date" visible={true}/>
                 </motion.div>
             </AnimatePresence>
-        </motion.div>
+        </div>
     )
 }
 
