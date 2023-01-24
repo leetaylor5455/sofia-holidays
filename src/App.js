@@ -3,8 +3,6 @@ import './App.css';
 import AnimatedRoutes from './Components/AnimatedRoutes';
 import { MemoryRouter as Router } from 'react-router-dom';
 
-import ScrollToTop from './Components/ScrollToTop';
-
 function App() {
   
   const cacheImages = async (srcArray) => {
@@ -32,6 +30,7 @@ function App() {
         '/Activities/sainte.jpg',
         '/Activities/arc.jpg',
         '/Activities/catacombs.jpg',
+        '/Titles/Back.svg',
         '/Titles/DateTitle.svg',
         '/Titles/HotelTitle.svg',
         '/Titles/ActivitiesTitle.svg',
@@ -46,7 +45,6 @@ function App() {
   return (
     <div className='App'>
       <Router basename={window.location.pathname}>
-        <ScrollToTop />
         <AnimatedRoutes/>
       </Router>
     </div>

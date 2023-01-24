@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 import Nav from './Nav';
-// import ActivitiesTitle from '../Images/ActivitiesTitle.svg';
 import ActivityCard from './ActivityCard';
 import Button from './Button';
 

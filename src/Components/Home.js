@@ -1,8 +1,6 @@
 import React from 'react';
-// import Title from '../Images/Title.svg';
-// import Eiffel from '../Images/Eiffel.svg';
 import Button from './Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 function Home() {
@@ -13,13 +11,30 @@ function Home() {
             exit={exit}
             transition={transition}
         >
-            <div className="eiffel-bg">
-                <img src={'/Titles/Eiffel.svg'} alt='Eiffel Tower'/>
-            </div>
-            <div className="intro-title">
-                <img src={'/Titles/Title.svg'} alt='Welcome to your Paris birthday'/>
-            </div>
-            <Button text='Get Started' link="/date" visible={true}/>
+            <AnimatePresence>
+                <motion.div className="eiffel-bg"
+                    initial={initial}
+                    animate={animate}
+                    transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
+                >
+                    <img src={'/Titles/Eiffel2.svg'} alt='Eiffel Tower'/>
+                </motion.div>
+                <motion.div className="intro-title"
+                    initial={{ opacity: 0, transform: 'translateY(150px)' }}
+                    animate={{ opacity: 1, transform: 'translateY(0px)' }}
+                    transition={{ delay: 0.6, type: 'spring', stiffness: 250, damping: 50 }}
+                >
+                    <img src={'/Titles/Title.svg'} alt='Welcome to your Paris birthday'/>
+                </motion.div>
+
+                <motion.div style={{ position: 'fixed ', bottom: '0', left: '50%' }}
+                    initial={{ opacity: 0, transform: 'translateY(140px)' }}
+                    animate={{ opacity: 1, transform: 'translateY(0px)' }}
+                    transition={{ delay: 2, type: 'spring', stiffness: 250, damping: 40 }}
+                >
+                    <Button text='Get Started' link="/date" visible={true}/>
+                </motion.div>
+            </AnimatePresence>
         </motion.div>
     )
 }

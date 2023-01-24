@@ -36,7 +36,14 @@ function AnimatedRoutes() {
   }
 
   return (
-    <AnimatePresence mode='wait' initial={false}>
+    <AnimatePresence mode='wait' initial={true}
+        onExitComplete={() => {
+        if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0 })
+        }
+        }}
+    
+    >
         <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Home />}/>
             <Route path='/date' element={<Suspense>

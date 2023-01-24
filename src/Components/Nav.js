@@ -1,5 +1,4 @@
 import React from 'react'
-import Back from '../Images/Back.svg'
 import { Link } from 'react-router-dom';
 
 function Nav(props) {
@@ -11,7 +10,7 @@ function Nav(props) {
 
         <Link to={props.back}>
             <div className='back'>
-                <img src={Back} alt='Back button'/>
+                <img src={'/Titles/Back.svg'} alt='Back button'/>
             </div>
         </Link>
     </div>

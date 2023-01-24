@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { initial, animate, exit, transition } from './motionSettings';
 
 import Nav from './Nav';
-// import HotelTitle from '../Images/HotelTitle.svg';
 import Button from './Button';
 
 import HotelCard from './HotelCard';
