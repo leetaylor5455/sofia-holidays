@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     const imgs = [
+        '/Titles/Title.svg',
         '/LeRobinet/6.jpg',
         '/OKKO/1.jpg',
         '/Henriette/1.jpg',

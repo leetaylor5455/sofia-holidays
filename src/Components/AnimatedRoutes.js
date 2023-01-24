@@ -36,7 +36,7 @@ function AnimatedRoutes() {
   }
 
   return (
-    <AnimatePresence mode='wait' initial={true}
+    <AnimatePresence mode='wait' initial={false}
         onExitComplete={() => {
         if (typeof window !== 'undefined') {
             window.scrollTo({ top: 0 })
