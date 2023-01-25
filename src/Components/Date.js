@@ -31,7 +31,7 @@ function DatePage(props) {
       const day = value.getDate();
       const month = value.getMonth();
 
-      if (unavailableDates.find(date => date[0] === day && date[1] === month)) {
+      if (+new Date() > +value || unavailableDates.find(date => date[0] === day && date[1] === month)) {
         setValid(false);
         let activeDate = document.getElementsByClassName(['react-calendar__tile--rangeBothEnds'])
         activeDate[0].style.border = "1px solid #FF6666";

@@ -1,6 +1,6 @@
 {
-  "name": "sofia-airlines",
-  "version": "0.1.0",
+  "name": "sofia-holidays",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",

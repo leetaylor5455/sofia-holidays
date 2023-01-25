@@ -143,6 +143,7 @@ input[type=submit] {
 /* Selected Shadow */
   z-index: 99;
   box-shadow: 0px 7px 15px rgba(255, 103, 212, 0.4);
+  transform: translateY(-8%);
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
