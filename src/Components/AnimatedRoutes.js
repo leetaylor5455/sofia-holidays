@@ -17,7 +17,7 @@ const Activities = lazy(() => ActivitiesPromise);
 
 function AnimatedRoutes() {
   const location = useLocation();
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState();
   const [hotel, setHotel] = useState({});
   const [activities, setActivities] = useState([]);
 
