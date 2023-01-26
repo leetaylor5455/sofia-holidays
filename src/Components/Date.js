@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import Nav from './Nav';
 import Button from './Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { initial, animate, exit, transition  } from './motionSettings';
 
 import Calendar from 'react-calendar';
 
 function DatePage(props) {
   
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setAnimated(true), 1500);
+  }, []);
+
   const [valid, setValid] = useState(false);
 
   const [value, setValue] = useState(props.date);
@@ -56,23 +62,34 @@ function DatePage(props) {
       exit={exit}
       transition={transition}
     >
+      <div className='perspective'>
         <Nav title={'/Titles/DateTitle.svg'} back='/'/>
 
-        <div className='calendar-border'>
-            <div className='calendar'>
-                <Calendar 
-                    onChange={setValue} 
-                    value={value} 
-                    next2Label={null}
-                    prev2Label={null}
-                    formatShortWeekday={(locale, date) => ("0" + date).slice(1,3)}
-                    nextLabel={<img src={'/Titles/CalendarNextChevron.svg'} alt='Next button'/>}
-                    prevLabel={<img src={'/Titles/CalendarPrevChevron.svg'} alt='Prev button'/>}
-                    />
-            </div>
-        </div>
+        <AnimatePresence>
+          <motion.div className='calendar-border'
+            // initial={{ opacity: 0, transform: 'translateY(100%) translateZ(-150px) rotateX(-20deg)' }}
+            initial={{ opacity: 0, transform: 'translate3d(0, 100%, -100px) rotateX(-15deg)' }}
+            animate={{ opacity: 1, transform: 'translate3d(0, 0%, 0px) rotateX(0deg)' }}
+            // animate={{ opacity: 1, transform: 'translateY(0%) translateZ(0px) rotateX(0deg)' }}
+            transition={{ delay: 0.25 }}
+          >
+              <div className='calendar'>
+                  <Calendar 
+                      onChange={setValue} 
+                      value={value} 
+                      next2Label={null}
+                      prev2Label={null}
+                      formatShortWeekday={(locale, date) => ("0" + date).slice(1,3)}
+                      nextLabel={<img src={'/Titles/CalendarNextChevron.svg'} alt='Next button'/>}
+                      prevLabel={<img src={'/Titles/CalendarPrevChevron.svg'} alt='Prev button'/>}
+                      />
+              </div>
+          </motion.div>
+        </AnimatePresence>
+        
+      </div>
 
-        <Button text='Next' link='/hotel' visible={ valid ? true : false }/>
+        <Button text='Next' link='/hotel' visible={ valid && animated }/>
     </motion.div>
 
   )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { initial, animate, exit, transition } from './motionSettings';
+import { AnimatePresence, motion } from 'framer-motion';
+import { exit, transition } from './motionSettings';
 
 import Nav from './Nav';
 import Button from './Button';
@@ -8,6 +8,12 @@ import Button from './Button';
 import HotelCard from './HotelCard';
 
 function Hotel(props) {
+
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setAnimated(true), 2000);
+  }, []);
 
   const [ready, setReady] = useState(false);
 
@@ -68,32 +74,55 @@ function Hotel(props) {
     } else {
         setReady(false);
     }
-  }, [props.hotel])
+  }, [props.hotel]);
+
+  const cards = {
+    hidden: {},
+    show: { transition: { delayChildren: 0.25, staggerChildren: 0.15 } }
+  }
+
+  const card = {
+    hidden: { opacity: 0, transform: 'translate3d(0, 60%, -100px) rotateX(-15deg)' },
+    show: {
+        opacity: 1,
+        transform: 'translate3d(0, 0%, 0px) rotateX(0deg)',
+        // transition: { ease: [0.33, 1, 0.68, 1], duration: 1 }
+    }
+  }
 
   return (
     <motion.div className='container'
-        initial={initial}
-        animate={animate}
         exit={exit}
         transition={transition}
     >
-        <Nav title={'/Titles/HotelTitle.svg'} back='/date'/>
+        <div className='perspective'>
+            <Nav title={'/Titles/HotelTitle.svg'} back='/date'/>
 
-        <div className='hotels'>
+            <AnimatePresence>
+                <motion.div className='hotels perspective'
+                    variants={cards}
+                    initial='hidden'
+                    animate='show'
+                >
+                    
+                    {hotelData.map((hotel) => (
+                        <motion.div variants={card} className='hotel-transform'>
+                            <HotelCard 
+                                key={hotel.name}
+                                name={hotel.name}
+                                sources={hotel.sources}
+                                keyPoints={hotel.keyPoints}
+                                onClick={() => props.setHotel(hotel)}
+                                selected={props.hotel.index === hotel.index ? true : false}
+                            />
+                        </motion.div>
+                    ))}
+                    
 
-            {hotelData.map((hotel) => (
-                <HotelCard 
-                    key={hotel.name}
-                    name={hotel.name}
-                    sources={hotel.sources}
-                    keyPoints={hotel.keyPoints}
-                    onClick={() => props.setHotel(hotel)}
-                    selected={props.hotel.index === hotel.index ? true : false}
-                />
-            ))}
-
+                </motion.div>
+            </AnimatePresence>
         </div>
-        <Button text='Next' link='/activities' visible={ready}/>
+        <Button text='Next' link='/activities' visible={ready && animated}/>
     </motion.div>
   )
 }

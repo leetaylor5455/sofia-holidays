@@ -17,15 +17,25 @@ function SubmitButton(props) {
         .then((result) => {
             console.log(result);
             if (result.status === 200) {
-                setWaiting(false);
                 navigate('/receipt', { replace: true });
             }
         }, (error) => {
             console.log(error.text);
         });
     
-    
   }
+
+  const visible = {
+    opacity: 1,
+    pointerEvents: 'all',
+    transform: 'translateY(0vh) translateX(-50%)'
+}
+
+    const hidden = {
+    opacity: 0,
+    pointerEvents: 'none',
+    transform: 'translateY(15vh) translateX(-50%)'
+}
 
   return (
     <div className='submit-button'>     
@@ -33,7 +43,7 @@ function SubmitButton(props) {
             <input style={{display: 'none'}} type='text' name='date' value={props.date}/>
             <input style={{display: 'none'}} type='text' name='hotel' value={props.hotel}/>
             <input style={{display: 'none'}} type='text' name='website' value={props.website}/>
-            <input type='submit' value={ waiting ? 'Confirming...' : 'Okay!'}/>
+            <input type='submit' value={ waiting ? 'Confirming...' : 'Okay!'} style={ props.visible ? visible : hidden }/>
         </form>
     </div>
   )
