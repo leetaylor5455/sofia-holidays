@@ -78,11 +78,11 @@ function Hotel(props) {
 
   const cards = {
     hidden: {},
-    show: { transition: { delayChildren: 0.25, staggerChildren: 0.15 } }
+    show: { transition: { delayChildren: 0.28, staggerChildren: 0.2 } }
   }
 
   const card = {
-    hidden: { opacity: 0, transform: 'translate3d(0, 60%, -100px) rotateX(-15deg)' },
+    hidden: { opacity: 0, transform: 'translate3d(0, 35%, -80px) rotateX(-15deg)' },
     show: {
         opacity: 1,
         transform: 'translate3d(0, 0%, 0px) rotateX(0deg)',
