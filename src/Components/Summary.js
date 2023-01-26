@@ -148,6 +148,7 @@ function Summary(props) {
             className='summary-heading'>We'll be doing</motion.div>
 
             <motion.div className='activities perspective'
+              style={{ marginTop: 0 }}
               variants={cards}
               initial='hidden'
               animate='show'
